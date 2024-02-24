@@ -151,11 +151,9 @@ body {
   font-style: normal;
 }
 
-.section-heading h6 {
+.section-heading h2 {
   color: #7a6ad8;
-  font-size: 14px;
-  text-transform: uppercase;
-  font-weight: 600;
+
 }
 
 .main-button a {
@@ -175,6 +173,8 @@ body {
   background-color: #7a6ad8;
   color: #fff;
 }
+
+
 
 /* 
 ---------------------------------------------
@@ -287,9 +287,9 @@ Header Style
 .background-header {
   background-color: #7a6ad8 !important;
   border-radius: 0px 0px 25px 25px;
-  height: 80px!important;
+  height: 120px!important;
   position: fixed!important;
-  top: 0!important;
+  top: -15px!important;
   left: 0;
   right: 0;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
@@ -302,7 +302,7 @@ Header Style
 .header-area {
   position: absolute;
   background-color: transparent;
-  top: 40px;
+  top: 10px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -372,7 +372,7 @@ Header Style
   border-radius: 0px 0px 25px 25px;
   flex-basis: 100%;
   margin-right: 0px;
-  justify-content: right;
+  justify-content: center;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -398,9 +398,9 @@ Header Style
   padding-right: 20px;
   border-radius: 20px;
   font-weight: 300;
-  font-size: 14px;
-  height: 40px;
-  line-height: 40px;
+  font-size: 28px;
+  height: 100px;
+  line-height: 100px;
   text-transform: capitalize;
   color: #fff;
   -webkit-transition: all 0.4s ease 0s;
@@ -593,6 +593,11 @@ Header Style
     left: 30px;
     top: 0px;
   }
+
+  .logo-img{
+    width: 12rem;
+  }
+
   .background-header .main-nav .logo {
     top: 0px;
   }
@@ -675,15 +680,15 @@ Banner Style
 }
 
 .main-banner .item-1 {
-  background-image: url(../images/banner-item-01.jpg);
+  background-image: url(../images/laptop-hands.jpg);
 }
 
 .main-banner .item-2 {
-  background-image: url(../images/banner-item-02.jpg);
+  background-image: url(../images/desk.jpg);
 }
 
 .main-banner .item-3 {
-  background-image: url(../images/banner-item-03.jpg);
+  background-image: url(../images/handbag.jpg);
 }
 
 .main-banner .item {
@@ -944,6 +949,16 @@ h2.accordion-header button {
 .about-us .section-heading .main-button {
   margin-top: 50px;
 }
+
+.separator {
+  width: 90%; /* Adjust the width of the separator */
+  height: 20px; /* Adjust the height of the separator */
+  background-color: #7a6ad8; /* Color of the separator */
+  border-radius: 10px; /* Border radius to make the edges rounded */
+  margin: 20px auto; /* Adjust spacing above and below the separator */
+  position: relative; /* Position relative to create pseudo-element */
+}
+
 
 
 /* 
@@ -1522,6 +1537,10 @@ Contact Style
   z-index: 1;
 }
 
+.logo-img{
+  width: 15rem;
+}
+
 .contact-us .contact-us-content::before {
   background: url(../images/contact-dec-01.png);
   position: absolute;
@@ -1705,6 +1724,10 @@ body {
     display: inline-block;
     margin: 0px 10px;
   }
+
+  .logo-img{
+    width: 8rem;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1725,6 +1748,7 @@ body {
     padding: 100px 60px 140px 60px;
     margin-left: 0px;
     text-align: center;
+    margin-top: 30px;
   }
   .main-banner .item h2,
   .main-banner .item p {
@@ -1771,7 +1795,7 @@ body {
   }
   .about-us .section-heading {
     margin-left: 0px;
-    margin-top: 120px;
+    margin-top: 30px;
   }
   .about-us::before,
   .testimonials::before,
@@ -1782,6 +1806,7 @@ body {
   .testimonials .section-heading p,
   .contact-us .section-heading p {
     margin-top: 30px;
+    margin-bottom: 60px;
   }
   .about-us .section-heading .main-button {
     margin-top: 30px;
@@ -1893,6 +1918,9 @@ body {
   footer {
     margin-top: 30px;
   }
+  .logo-img{
+    width: 12rem;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -1904,5 +1932,8 @@ body {
   }
   .fun-facts:before {
     width: 95%;
+  }
+  .logo-img{
+    width: 11rem;
   }
 }

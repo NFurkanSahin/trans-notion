@@ -99,6 +99,28 @@
 		});
 	}
 
+	// Set card heights 
+	function setEqualHeight() {
+		var maxHeight = 0;
+		$('.custom-card').each(function() {
+		  var currentHeight = $(this).outerHeight();
+		  if (currentHeight > maxHeight) {
+			maxHeight = currentHeight;
+		  }
+		});
+		$('.custom-card').css('min-height', maxHeight);
+	  }
+  
+	  // Set equal heights on page load
+	  $(document).ready(function() {
+		setEqualHeight();
+	  });
+  
+	  // Set equal heights on window resize
+	  $(window).resize(function() {
+		setEqualHeight();
+	  });
+
 
 	// Menu elevator animation
 	$('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
@@ -159,6 +181,15 @@
 	    });
 	}
 
+	// Search function
+	$(document).ready(function(){
+		$("#searchInput").on("keyup", function() {
+		  var value = $(this).val().toLowerCase();
+		  $("#content *").filter(function() {
+			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		  });
+		});
+	  });
 
 	// Page loading animation
 	$(window).on('load', function() {
