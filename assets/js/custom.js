@@ -1,3 +1,19 @@
+const ENV = 'development'; 
+
+const CONFIG = {
+  development: {
+    apiUrl: 'http://localhost:3000',
+  },
+  production: {
+    apiUrl: 'https://notiontranslation.com',
+  },
+  staging: {
+    apiUrl: 'https://notiontranslation.com',
+  },
+};
+
+const API_URL = CONFIG[ENV].apiUrl;
+
 (function ($) {
 	
 	"use strict";
@@ -32,28 +48,6 @@
 		}
 	})
 
-	const elem = document.querySelector('.event_box');
-	const filtersElem = document.querySelector('.event_filter');
-	if (elem) {
-		const rdn_events_list = new Isotope(elem, {
-			itemSelector: '.event_outer',
-			layoutMode: 'masonry'
-		});
-		if (filtersElem) {
-			filtersElem.addEventListener('click', function(event) {
-				if (!matchesSelector(event.target, 'a')) {
-					return;
-				}
-				const filterValue = event.target.getAttribute('data-filter');
-				rdn_events_list.arrange({
-					filter: filterValue
-				});
-				filtersElem.querySelector('.is_active').classList.remove('is_active');
-				event.target.classList.add('is_active');
-				event.preventDefault();
-			});
-		}
-	}
 
 
 	$('.owl-banner').owlCarousel({
@@ -245,5 +239,47 @@
             });
         });
     }
+	//contact form ajax request
+	
+	$(document).ready(function() {
+		$('#contact-form').submit(function(e) {
+		  e.preventDefault(); // Prevent the default form submission
+	  
+		  $.ajax({
+			type: 'POST',
+			url: `${API_URL}/send-email`,
+			data: $(this).serialize(),
+			success: function(response) {
+			  console.log(response);
+			  alert('Email sent successfully!');
+			},
+			error: function(error) {
+			  console.log(error);
+			  alert('Error sending email.');
+			}
+		  });
+		});
+	  });
+
+	// function setEqualHeightImg() {
+	// 	var maxHeight = 0;
+	// 	$('.event_outer').each(function() {
+	// 	  var currentHeight = $(this).outerHeight();
+	// 	  if (currentHeight > maxHeight) {
+	// 		maxHeight = currentHeight;
+	// 	  }
+	// 	});
+	// 	$('.event_outer').css('min-height', maxHeight);
+	//   }
+  
+	//   // Set equal heights on page load
+	//   $(document).ready(function() {
+	// 	setEqualHeight();
+	//   });
+  
+	//   // Set equal heights on window resize
+	//   $(window).resize(function() {
+	// 	setEqualHeight();
+	//   });
 
 })(window.jQuery);

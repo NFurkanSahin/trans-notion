@@ -398,7 +398,7 @@ Header Style
   padding-right: 20px;
   border-radius: 20px;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 26px;
   height: 100px;
   line-height: 100px;
   text-transform: capitalize;
@@ -684,7 +684,7 @@ Banner Style
 }
 
 .main-banner .item-2 {
-  background-image: url(../images/desk.jpg);
+  background-image: url(../images/desk.png);
 }
 
 .main-banner .item-3 {
@@ -698,13 +698,15 @@ Banner Style
   border-radius: 25px;
   padding: 100px 100px;
   margin-left: 130px;
+  height: 65vh
+  
 }
 
 .main-banner .item span.category {
   background-color: #7a6ad8;
-  color: #fff;
-  font-size: 14px;
-  text-transform: uppercase;
+  color: #d1cece;
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
   padding: 5px 15px;
   border-radius: 20px;
   display: inline-block;
@@ -714,14 +716,14 @@ Banner Style
 .main-banner .item h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #fff;
+  color: #3e3e3e;
   line-height: 70px;
   width: 60%;
   margin-bottom: 40px;
 }
 
 .main-banner .item p {
-  color: #fff;
+  color: #3e3e3e;
   width: 65%;
 }
 
@@ -1013,12 +1015,44 @@ Courses Style
   margin-bottom: -5px;
 }
 
-.events_item .thumb span.category {
-  position: absolute;
-  left: 30px;
-  top: 30px;
+.event_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.events_item {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 calc(25% - 10px); /* adjust '25%' to be the desired width minus any margin/padding */
+  margin: 5px; /* adjust as needed */
+}
+
+.thumb {
+  height: 300px; /* fixed height */
+  overflow: hidden; /* ensures content doesn't exceed the box */
+}
+
+.thumb img {
+  width: 100%;        /* Makes the image full width of the .thumb div */
+  height: 100%;       /* Makes the image full height of the .thumb div */
+  object-fit: cover;  /* Covers the whole area, may cut off some parts of the image */
+  display: block;     /* Removes any default inline spacing */
+}
+
+.custom-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes the content to top and bottom */
+}
+
+.custom-card .down-content {
+  height: 100px; /* fixed height */
+}
+
+.events_item span.category {
   font-size: 14px;
-  text-transform: uppercase;
   color: #7a6ad8;
   background-color: rgba(250, 250, 250, 0.95);
   padding: 8px 20px;
