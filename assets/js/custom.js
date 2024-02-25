@@ -84,6 +84,22 @@ const API_URL = CONFIG[ENV].apiUrl;
       }
 	});
 
+	//clickable div with scroll
+
+
+
+	//   $(document).ready(function() {
+	   
+	// 	$('.item').on('click', function(event){
+	// 	  var $this = $(this);
+	// 	  const targetId = $(this).data('target');
+	// 	  const $targetElement = $('#' + targetId);
+	// 	  $('html, body').animate({
+	// 		scrollTop: $targetElement.offset().top
+	// 	  }, 'fast');
+	// 	});
+	   
+	//   });
 
 	// Menu Dropdown Toggle
 	if($('.menu-trigger').length){
